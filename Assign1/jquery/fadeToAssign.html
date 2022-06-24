@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script 
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#bt1").click(function() {
+                $("#fadeto").fadeTo(3000, 0.1, );
+            });
+
+            
+            
+            var pic = $("#image1");
+            var images = ["/home/neosoft/Desktop/pic1.jpeg","/home/neosoft/Desktop/pic2.jpeg","/home/neosoft/Desktop/pic3.jpeg","/home/neosoft/Desktop/pic4.jpeg"];
+  
+            var i = 0;
+            setInterval(function () {
+  
+                
+                i = (i + 1) % images.length;
+                
+                pic.fadeOut(2000, function () {
+                    $(this).attr("src", images[i]);
+                    $(this).fadeIn(2000);
+                    
+                });
+                
+            }, 5000);
+        })
+                
+  
+    </script>
+    <style>
+        img{
+            height: 300px;
+            width: 300px;
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <button id="bt1">Click</button>
+    <img id="fadeto" src="../img1.jpeg" alt="">
+
+    <br><br>
+
+    <div class="slideshow">
+        <img id="image1" src="/home/neosoft/Desktop/pic1.jpeg">
+    </div>
+</body>
+
+
+    
+</body>
+</html>

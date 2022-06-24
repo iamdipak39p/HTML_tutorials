@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM DEMOS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    <!-- DOM DEMO-->
+    <div>
+        <div class="addblock" id="block1">
+            <label>Enter number 1:</label><input type="number" id="num1" name="num" oninput="extractValue()"><br>
+            <label>Enter number 2:</label><input type="number" id="num2" name="num"><br>
+            <button onclick="add()" id="addnumsButton">ADD</button>
+            <footer id="footer">
+                This Is footer
+            </footer>
+        </div>     
+        <div class=<!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Document</title>
+            </head>
+            <body>
+                
+            </body>
+            </html>nter string 1:</label><input type="text" id="s1" name="s" ><br>
+            <label>Enter string 2:</label><input type="text" id="s2" name="s"><br>
+            <button>ADD</button>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        let btNode=document.getElementById("addnumsButton");
+        btNode.style.padding="10px";
+        btNode.style.backgroundColor="blue";
+        console.log(document.body.children);
+        const node1=document.getElementById('num1');  // one
+        console.log(node1); console.log(node1.type);
+        console.log(node1.id); console.log(node1.name);
+        //node1.type="password";
+        function extractValue(){
+            let no1=node1.value;
+            console.log(no1);
+        }
+       let nodearray= document.getElementsByName('num');
+       console.log(nodearray);
+       let newNode=null;
+       function add(){
+        let sum=0;
+       for(let node of nodearray){
+           console.log(node.type);
+           console.log(node.value);
+           sum=sum+parseFloat(node.value);
+           console.log(sum);
+           
+       }
+       btNode.style.backgroundColor="green";
+       let paraNode=document.createElement('p');
+       let sumNode=document.createTextNode(sum+'');
+       paraNode.append(sumNode);
+       if(newNode==null)
+            newNode=document.getElementById('block1').insertBefore(paraNode,document.getElementById('footer'))
+        else{
+            newNode.innerText="";
+            newNode.append(sumNode);
+
+        }
+
+  
+    }
+    // use getElementsByClassName : array : display
+    // use getElementsbyTagName : label : array : display
+    const labelarray=document.getElementsByTagName('label');
+    console.log(labelarray);
+    console.log(document.title);
+    let snode1=document.getElementById('s1');
+    let snode2=document.getElementById('s2');
+    let addStrings=function(){
+        let sumStr=snode1.value+snode2.value;
+        document.getElementById('result').innerHTML="<i>"
+    }
+    let colorArray=["green","blue","red","pink"];
+    i=0;
+    // let interval=setInterval(()=>{
+    //     document.body.style.backgroundColor=colorArray[i];
+    //     if(i==colorArray.length)
+    //        i=0;
+    //     else
+    //        i++;
+
+    // },1000);
+
+    let interval=setInterval(()=>{
+        document.body.style.backgroundColor=colorArray[i];
+        if(i==colorArray.length)
+           clearInterval(interval);
+        else
+           i++;
+
+    },1000);
+    
+    setTimeout(()=>document.title="Dom",3000);
+})
+
+    </script>
+</body>
+</html>

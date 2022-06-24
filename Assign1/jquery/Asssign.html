@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label{
+            color: red;
+            font-size: 20px;
+        }
+        input{
+            border: 3px solid green;
+            height: 30px;
+            width: 100px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#button1').click(function(){
+                $('.para1').text("This is the parargraph after <b>clicking button</b>");
+            });
+
+            $('#button2').click(function(){
+                $('.para2').html("This is the parargraph after <b>clicking button</b>");
+
+
+            });
+
+            $('#button3').click(function(){
+                $('#Fname').val("Dipak");
+                $('#Fname').css("color","red")
+                $('#Lname').val("Patil");
+                $('#Lname').css("color","red")
+
+            });
+        });
+
+
+
+
+    </script>
+
+</head>
+<body>
+    <div>
+        <button id="button1">Button1</button>
+        <p class="para1">This is paragraph 1.</p>
+        <p class="para1">This is paragraph 2.</p>
+        
+    </div>
+
+    <br><br>
+
+    <div>
+        <button id="button2">Button2</button>                             
+        <p class="para2">This is paragraph 1.</p>
+        <p class="para2">This is paragraph 2.</p>
+        <p class="para2">This is paragraph 3.</p>
+    </div>
+
+    <br><br>
+
+    <label for=""> First Name</label>
+    <input type="text" id="Fname">
+    <br><br>
+    <label for=""> Last Name</label>
+    <input type="text" id="Lname">
+    <br><br>
+    <button id="button3">Load Values</button>
+
+    
+</body>
+</html>

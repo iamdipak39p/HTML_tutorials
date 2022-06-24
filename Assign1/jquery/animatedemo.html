@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .block{
+            height: 200px;
+            width: 200px;
+            border: 2px solid red;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('section>div:first-child').mouseover(function(){
+                // $(this).css('background-color','yellow');
+                $(this).css({backgroundColor:'blue',padding:"20px",fontSize:'20px'})
+            });
+            
+            $('section>div:last-child').mouseover(function(){
+                $(this).animate({backgroundColor:'blue',padding:"20px",fontSize:'20px'},2000,function(){
+                    $(this).text("Hello My Friends");
+                });
+            
+
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <section>
+        <div class="block">This iS block</div>
+        <div class="block">This iS block</div>
+        <div class="block">This iS block</div>
+    </section>
+</body>
+</html>

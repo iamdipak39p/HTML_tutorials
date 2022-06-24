@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM DEMOS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            let btNode=$('#addnumsButton');
+            btNode.css({padding:"10px",backgroundColor:'red'})
+            console.log(document.body.children);
+            const node1=$('#num1');
+            console.log(node1);
+            console.log(node1.attr('value'));
+            console.log(node1.attr('type'));
+            console.log(node1.attr('id'));
+            console.log(node1.attr('name'));
+            $('#num1').keyup(()=>extractValue());
+            function extractValue(){
+                let no1=$('#num1').val();
+                cosole.log("hello");
+            }
+
+
+            let numNode1=$('#num1');
+            let numNode2=$('#num2');
+            $('#addnumsButton').click(()=>add());
+            let flag=false;
+            function add(){
+                let sum=parseFloat(numNode1.val())+parseFloat(numNode2.val());
+                console.log(sum);
+                if(flag==false){
+                    let paraNode=$('<p></p>').text(sum);
+                    paraNode.attr('id','resultpara');
+                    $('#block1').append(paraNode);
+                    flag=true;
+                }
+                else
+                    $('#resultpara').text(sum);
+            }
+
+        });
+        
+        
+    </script>
+
+    
+</head>
+<body>
+    <!-- DOM DEMO-->
+    <div>
+        <div class="addblock" id="block1">
+            <label>Enter number 1:</label><input type="number" id="num1" name="num" oninput="extractValue()"><br>
+            <label>Enter number 2:</label><input type="number" id="num2" name="num"><br>
+            <button  id="addnumsButton">ADD</button>
+            <footer id="footer">
+                This Is footer
+            </footer>
+        </div>     
+        <div >
+            
+                
+           
+            </html>Enter string 1:</label><input type="text" id="s1" name="s" ><br>
+            <label>Enter string 2:</label><input type="text" id="s2" name="s"><br>
+            <button>ADD</button>
+        </div>
+    </div>
+
+</body>    
+
+</body>
+</html>
